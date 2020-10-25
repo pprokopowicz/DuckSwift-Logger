@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DuckSwift",
+        "repositoryURL": "https://github.com/pprokopowicz/DuckSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "ce28efedfa0c13613c6497cf92b8f6cc31088bc2",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
