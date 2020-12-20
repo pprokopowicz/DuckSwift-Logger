@@ -32,12 +32,12 @@ public struct LoggerMiddleware: Middleware {
                 return "DucksSwift"
             case .state:
                 if let state = state {
-                    return "- State: \(state)"
+                    return "State: \(state)"
                 } else {
-                    return "- State: nil"
+                    return "State: nil"
                 }
             case .action:
-                return "- Action: \(action)"
+                return "Action: \(action)"
             case .custom(let log):
                 return log(action, state)
             }
@@ -56,12 +56,10 @@ public struct LoggerMiddleware: Middleware {
     public func body(dispatch: @escaping DispatchFunction, state: @escaping GetState) -> (@escaping DispatchFunction) -> DispatchFunction {
         { next in
             { action in
-                let log = logElements
-                    .compactMap {
-                        $0.logValue(action: action, state: state())
-                    }
-                    .joined(separator: " ")
                 #if DEBUG
+                let log = logElements
+                    .compactMap { $0.logValue(action: action, state: state()) }
+                    .joined(separator: " - ")
                 print(log)
                 #endif
                 next(action)

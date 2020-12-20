@@ -1,7 +1,7 @@
 import XCTest
-@testable import DuckSwift_Logger
+@testable import DuckSwiftLogger
 
-final class DuckSwift_LoggerTests: XCTestCase {
+final class DuckSwiftLoggerTests: XCTestCase {
     func testExample() {}
 
     static var allTests = [
